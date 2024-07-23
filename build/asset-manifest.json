@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/React-UTTEC/build/static/css/main.5406987d.css",
+    "main.js": "/React-UTTEC/build/static/js/main.24dc3f9f.js",
+    "static/js/453.e9321d51.chunk.js": "/React-UTTEC/build/static/js/453.e9321d51.chunk.js",
+    "index.html": "/React-UTTEC/build/index.html",
+    "main.5406987d.css.map": "/React-UTTEC/build/static/css/main.5406987d.css.map",
+    "main.24dc3f9f.js.map": "/React-UTTEC/build/static/js/main.24dc3f9f.js.map",
+    "453.e9321d51.chunk.js.map": "/React-UTTEC/build/static/js/453.e9321d51.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5406987d.css",
+    "static/js/main.24dc3f9f.js"
+  ]
+}
