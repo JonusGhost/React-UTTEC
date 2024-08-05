@@ -52,18 +52,44 @@ function PrivacyPolicy() {
         </section>
 
         <section>
-          <h2>Sus Derechos</h2>
-          <p>Usted tiene derecho a acceder a la información que tenemos sobre usted y a solicitar la corrección de cualquier información incorrecta. También puede solicitar la eliminación de su información personal, sujeto a ciertas excepciones legales.</p>
+        <h2>Protección de la Información</h2>
+        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger su información personal contra el acceso no autorizado, la alteración, la divulgación o la destrucción. Estas medidas incluyen:</p>
+        <ul>
+            <li>Uso de tecnología de encriptación para proteger los datos durante la transmisión.</li>
+            <li>Control de acceso físico y lógico a nuestras instalaciones y sistemas.</li>
+            <li>Capacitación y concientización del personal sobre la importancia de la privacidad y la seguridad de los datos.</li>
+        </ul>
         </section>
 
         <section>
-          <h2>Cambios a Nuestra Política de Privacidad</h2>
-          <p>Podemos actualizar esta política de privacidad de vez en cuando, y cualquier cambio se publicará en esta página. Le recomendamos que revise periódicamente esta página para estar al tanto de cualquier cambio.</p>
+        <h2>Normas y Certificaciones ISO</h2>
+        <p>En Hospital Lindas Sonrisas, nos adherimos a las siguientes normas ISO para garantizar la calidad y seguridad de nuestros servicios:</p>
+        <ul>
+            <li><strong>ISO 9001:</strong> Sistema de Gestión de la Calidad.</li>
+            <li><strong>ISO 14001:</strong> Sistema de Gestión Ambiental.</li>
+            <li><strong>ISO 27001:</strong> Sistema de Gestión de Seguridad de la Información.</li>
+            <li><strong>ISO 45001:</strong> Sistema de Gestión de Salud y Seguridad en el Trabajo.</li>
+            <li><strong>ISO 13485:</strong> Sistema de Gestión de la Calidad para Dispositivos Médicos.</li>
+        </ul>
         </section>
 
         <section>
-          <h2>Contacto</h2>
-          <p>Si tiene alguna pregunta sobre esta política de privacidad o sobre el tratamiento de sus datos personales, por favor póngase en contacto con nosotros a través de nuestro <a href="#">formulario de contacto</a>.</p>
+        <h2>Sus Derechos</h2>
+        <p>Usted tiene ciertos derechos en relación con su información personal, incluyendo el derecho a:</p>
+        <ul>
+            <li>Acceder a su información personal y obtener una copia de la misma.</li>
+            <li>Solicitar la corrección de cualquier información personal inexacta o incompleta.</li>
+            <li>Solicitar la eliminación de su información personal en determinadas circunstancias.</li>
+            <li>Oponerse al procesamiento de su información personal en determinadas circunstancias.</li>
+        </ul>
+        </section>
+        <h2>Contacte con Nosotros</h2>
+        <p>Si tiene alguna pregunta sobre nuestra política de privacidad o desea ejercer sus derechos, por favor, póngase en contacto con nosotros a través de los siguientes medios:</p>
+        <p>Correo electrónico: <a href="minfohospital@indassonrisas.com.mx">infohospitall@indassonrisas.com.mx</a></p>
+        <p>Teléfono: 5578082170</p>
+        <p>Dirección: SaludLinda, 45, Estado de México, México</p>
+        <section>
+
         </section>
       </main>
 

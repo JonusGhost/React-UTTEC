@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import { Container, Card, Form, Button, Row, Col, Modal, Navbar, Nav } from 'react-bootstrap';
+import { Container, Card, Form, Button, Row, Col, Modal, Navbar, Nav, Carousel } from 'react-bootstrap';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -54,17 +54,39 @@ function Login() {
         <h2>HOSPITAL LINDAS SONRISAS</h2>
         <p>Por favor, inicie sesión o regístrese para acceder a su cuenta y utilizar nuestros servicios.</p>
 
-        
         <div className="carousel-container">
-          <div className="carousel">
-            <img src='../../public/doctor1.jpeg' alt="Imagen de Doctor 1" />
-            <img src="/images/doctor3.jpg" alt="Imagen de Doctor 3" />
-            <img src="/images/doctor4.jpg" alt="Imagen de Doctor 4" />
-            <img src="/images/doctor5.jpg" alt="Imagen de Doctor 5" />
-          </div>
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={`${process.env.PUBLIC_URL}/doctor1.jpeg`}
+                alt="Doctor 1"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={`${process.env.PUBLIC_URL}/doctor3.jpg`}
+                alt="Doctor 3"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={`${process.env.PUBLIC_URL}/doctor4.jpg`}
+                alt="Doctor 4"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src={`${process.env.PUBLIC_URL}/doctor5.jpg`}
+                alt="Doctor 5"
+              />
+            </Carousel.Item>
+          </Carousel>
         </div>
 
-        
         <div className="video-container">
           <h3>Conozca nuestras instalaciones</h3>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/aK146sAFYgU" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
