@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Especialidad from './components/Especialidad';
 import Cita from './components/Cita';
 import Cita_list from './components/Cita_list';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/home' Component={Home}/>
           <Route path='/cita' Component={Cita}/>
           <Route path='/cita_list' Component={Cita_list}/>
+          <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path='/especialidad/:id?' Component={Especialidad}/>
       </Routes>
     </BrowserRouter>
