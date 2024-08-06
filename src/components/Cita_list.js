@@ -101,9 +101,9 @@ function Cita_list() {
                 <Container>
                     <Navbar.Brand href="#home">Hospital Lindas Sonrisas</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/home">Inicio</Nav.Link>
+
                         <Nav.Link href="/cita">Nueva Cita</Nav.Link>
-                        <Nav.Link href="/especialidad">Especialidades</Nav.Link>
+                        
                     </Nav>
                 </Container>
             </Navbar>
