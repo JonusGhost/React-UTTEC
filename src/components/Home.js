@@ -46,11 +46,10 @@ function Home() {
     <>
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
-      <Navbar.Brand href="#home">Johan</Navbar.Brand>
+      <Navbar.Brand href="#home">Hospital lindas sonrisas</Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link href="/cita_list">Citas</Nav.Link>
-        <Nav.Link href="#features">Gonzalez</Nav.Link>
-        <Nav.Link href="#pricing">2522160180</Nav.Link>
+       
       </Nav>
     </Container>
   </Navbar>

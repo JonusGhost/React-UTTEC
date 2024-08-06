@@ -9,6 +9,14 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [showModal, setShowModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [registerUsername, setRegisterUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+  const [appPat, setAppPat] = useState('');
+  const [appMat, setAppMat] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [registerError, setRegisterError] = useState('');
   const navigate = useNavigate();
 
   const loginValidate = async (e) => {
@@ -22,7 +30,7 @@ function Login() {
       console.log(response.data);
 
       if (response.data.acceso === 'Ok') {
-        navigate('/home');
+        navigate('/cita_list');
       } else {
         setError(response.data.error);
       }
@@ -36,15 +44,46 @@ function Login() {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
+  const handleCloseRegister = () => setShowRegisterModal(false);
+  const handleShowRegister = () => setShowRegisterModal(true);
+
+  const registroValidate = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/paciente/guardar', {
+        username: registerUsername,
+        email: email,
+        password: registerPassword,
+        nombre: registerUsername,
+        app_pat: appPat,
+        app_mat: appMat,
+        telefono: telefono
+      });
+
+      console.log(response.data);
+
+      if (response.data === 'Ok') {
+        setShowRegisterModal(false);
+        setShowModal(true);
+      } else {
+        setRegisterError(response.data.error);
+      }
+
+    } catch (error) {
+      setRegisterError('Ocurrió un error con el servidor');
+      console.error('Ocurrió un error: ', error);
+    }
+  };
+
   return (
     <>
       <header className="header">
-        <Container>
+        <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h1>BIENVENIDO A HOSPITAL LINDAS SONRISAS</h1>
-          <Navbar bg="none" expand="lg" className="nav-links">
-            <Nav className="ml-auto">
+          <Navbar bg="none" expand="lg" className="nav-links" style={{ justifyContent: 'center' }}>
+            <Nav>
               <Button className="btn" onClick={handleShow}>Iniciar Sesión</Button>
-              <Button className="btn" onClick={() => navigate('/registro')}>Regístrate</Button>
+              <Button className="btn" onClick={handleShowRegister}>Regístrate</Button>
             </Nav>
           </Navbar>
         </Container>
@@ -98,6 +137,7 @@ function Login() {
         <p><a href="#" style={{ color: 'red' }} onClick={() => navigate('/privacy')}>Políticas de Privacidad</a></p>
       </footer>
 
+      {/* Modal de Inicio de Sesión */}
       <Modal show={showModal} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Iniciar Sesión</Modal.Title>
@@ -135,7 +175,100 @@ function Login() {
               </Col>
               <Col xs='auto' className="text-center">
                 <p className="text-primary mb-0 ms-2">¿No tienes una cuenta?</p>
-                <a href="#" onClick={() => navigate('/registro')}>Regístrate</a>
+                <a href="#" onClick={handleShowRegister}>Regístrate</a>
+              </Col>
+            </Row>
+          </Form>
+        </Modal.Body>
+      </Modal>
+
+      {/* Modal de Registro */}
+      <Modal show={showRegisterModal} onHide={handleCloseRegister} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Registro</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={registroValidate}>
+            <Form.Group className='mb-3' controlId='formNombre'>
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                value={registerUsername}
+                onChange={(e) => setRegisterUsername(e.target.value)}
+              />
+            </Form.Group>
+
+            <Row className='mb-3'>
+              <Form.Group as={Col} controlId="FormAppPaterno">
+                <Form.Label>Apellido paterno</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  value={appPat}
+                  onChange={(e) => setAppPat(e.target.value)}
+                />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="FormAppMaterno">
+                <Form.Label>Apellido materno</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  value={appMat}
+                  onChange={(e) => setAppMat(e.target.value)}
+                />
+              </Form.Group>
+
+              <Form.Group as={Col} controlId="FromTelefono">
+                <Form.Label>Teléfono</Form.Label>
+                <Form.Control
+                  required
+                  type="number"
+                  value={telefono}
+                  onChange={(e) => setTelefono(e.target.value)}
+                />
+              </Form.Group>
+            </Row>
+
+            <Form.Group className="mb-3" controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                required
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="registerPassword">
+              <Form.Label>Contraseña</Form.Label>
+              <Form.Control
+                required
+                type="password"
+                value={registerPassword}
+                onChange={(e) => setRegisterPassword(e.target.value)}
+                id="inputPassword5"
+                aria-describedby="passwordHelpBlock"
+              />
+              <Form.Text id="passwordHelpBlock" muted>
+                Tu contraseña debe tener entre 8 y 20 caracteres, contener letras y números,
+                y no debe contener espacios, caracteres especiales ni emojis.
+              </Form.Text>
+            </Form.Group>
+
+            {registerError && <p className="text-danger">{registerError}</p>}
+
+            <Row className='align-items-center'>
+              <Col xs='auto'>
+                <Button variant="primary" type="submit">Registrarse</Button>
+              </Col>
+              <Col xs='auto' className="text-center">
+                <p className="text-primary mb-0 ms-2">O</p>
+              </Col>
+              <Col xs='auto' className="text-center">
+                <p className="text-primary mb-0 ms-2">¿Ya tienes una cuenta?</p>
+                <a href="#" onClick={() => { setShowRegisterModal(false); setShowModal(true); }}>Iniciar Sesión</a>
               </Col>
             </Row>
           </Form>
