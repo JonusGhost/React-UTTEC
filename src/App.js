@@ -8,13 +8,18 @@ import Especialidad from './components/Especialidad';
 import Cita from './components/Cita';
 import Cita_list from './components/Cita_list';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import { LoginButton } from './components/login';
+import { LogoutButton } from './components/Logout';
 
 function App() {
   return (
     <BrowserRouter>
+        <LoginButton/>
+        <LogoutButton/>
       <Routes>
           <Route path='/' Component={Login}/>
           <Route path='/registro' Component={Register}/>
+          
           <Route path='/home' Component={Home}/>
           <Route path='/cita' Component={Cita}/>
           <Route path='/cita_list' Component={Cita_list}/>

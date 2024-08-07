@@ -3,7 +3,14 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { Container, Card, Form, Button, Row, Col, Modal, Navbar, Nav, Carousel } from 'react-bootstrap';
+import { useAuth0 } from '@auth0/auth0-react';
 
+export const LoginButton = () => 
+  {
+    const { loginWithRedirect } = useAuth0();
+
+    return <button onClick={() => loginWithRedirect()}>Login con 0Auth</button>
+  }
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
